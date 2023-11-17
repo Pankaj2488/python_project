@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+</head>
+<body>
+    <h1>Word Counter</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Submit</button>
+    </form>
+    <h2>Texts:</h2>
+    <ul>
+        {% for text in texts %}
+            <li>
+                <strong>Content:</strong> {{ text.content }}<br>
+                <strong>Word Count:</strong> {{ text.word_count }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
